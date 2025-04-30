@@ -36,7 +36,7 @@ function App() {
           </section>
         </main>
         <footer className="footer">
-          <p>Made with love, autumn leaves, and Argentinian spirit.</p>
+          <p>Made with love, Jordan xxx</p>
         </footer>
       </div>
     </div>
