@@ -6,14 +6,17 @@ function App() {
     <div className="autumn-bg">
       <div className="main-content">
         <header className="header">
-          <h1>Happy Birthday Joanna!</h1>
-          <p className="subtitle">An autumn surprise from Argentina 🍂🇦🇷</p>
+          <h1>Feliz Cumpleaños Joanna!</h1>
+          <span></span>
+          <p className="subtitle">Te deseo un muy feliz cumpleaños y un día hermoso, mi osito parde 🎉🎂🎈❤️🍂</p>
         </header>
         <main>
           <section className="section card-section">
             <h2>Your Birthday Card</h2>
             <p>Click below to view your special card:</p>
+            <div className="card-link-container">
             <a className="card-link" href="#" target="_blank" rel="noopener noreferrer">Open PDF Card</a>
+            </div>
           </section>
           <section className="section voice-section">
             <h2>Voice Notes</h2>
