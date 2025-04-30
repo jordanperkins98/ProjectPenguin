@@ -9,18 +9,28 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+  /* Use the uploaded image as background */
+  background: url('../public/joanna-dogs-bg.png') center center no-repeat;
   background-size: cover;
-  background-repeat: no-repeat;
   background-attachment: fixed;
   color: #4e2e0e;
+  position: relative;
+}
+
+.main-content {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 95vw;
+  border-radius: 1.5rem;
+  padding: 2rem 1rem;
+  position: relative;
+  top: 50px;
+  z-index: 2;
 }
 
 .header {
   text-align: center;
   padding: 2rem 1rem 1rem 1rem;
-  background: rgba(255, 255, 255, 0.7);
   border-bottom: 2px solid #e07a5f;
 }
 
@@ -39,9 +49,7 @@ main {
 }
 
 .section {
-  background: rgba(255, 255, 255, 0.85);
   border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(160, 82, 45, 0.1);
   padding: 1.5rem;
   margin: 0 auto;
   max-width: 500px;
@@ -96,21 +104,13 @@ main {
 .footer {
   text-align: center;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.7);
   border-top: 2px solid #e07a5f;
   font-size: 0.95rem;
 }
 
 @media (max-width: 600px) {
-  main {
-    padding: 1rem 0.2rem;
-    gap: 1.2rem;
-  }
-  .section {
-    padding: 1rem;
+  .main-content {
+    padding: 1rem 0.5rem;
     max-width: 98vw;
-  }
-  .header {
-    padding: 1.2rem 0.5rem 0.7rem 0.5rem;
   }
 }
