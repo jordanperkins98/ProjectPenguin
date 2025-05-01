@@ -11,5 +11,14 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- Include the CryptoJS library for hashing the user id before sending it to the PuzzleMe server. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!-- Include the javascript library for embedding this puzzle. -->
+    <script id="pm-script" src="https://puzzleme.amuselabs.com/pmm/js/puzzleme-embed.js"></script>
+    <!-- Specify the Amuse Labs server name from where the puzzles will be served and trigger the embed flow. -->
+    <script>
+        PM_Config = window.PM_Config || {};
+        PM_Config.PM_BasePath = "https://puzzleme.amuselabs.com/pmm/";
+    </script>
   </body>
 </html>
