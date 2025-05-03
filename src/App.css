@@ -172,6 +172,54 @@ main {
   transition: opacity 1s, height 0s 1s;
 }
 
+.card-password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem 0;
+}
+.card-password-input {
+  border: 2px solid #ff7eb3;
+  outline: none;
+  background: #fff;
+  color: #b85c38;
+  border-radius: 2em;
+  padding: 0.7em 1.5em;
+  font-size: 1.1rem;
+  font-family: inherit;
+  width: 260px;
+  box-shadow: 0 2px 8px rgba(255, 120, 180, 0.08);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.card-password-input:focus {
+  border: 2.5px solid #ff758c;
+  box-shadow: 0 2px 12px rgba(255, 120, 180, 0.18);
+}
+.card-password-btn {
+  background: linear-gradient(90deg, #ff7eb3 0%, #ff758c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 2em;
+  padding: 0.7em 2em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(255, 120, 180, 0.15);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 0.2rem;
+}
+.card-password-btn:hover {
+  background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+  transform: scale(1.05);
+}
+.card-password-error {
+  color: #ff758c;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  font-weight: 500;
+}
+
 @media (max-width: 600px) {
   .main-content {
     padding: 1rem 0.5rem;
