@@ -61,9 +61,9 @@ function App() {
     <div className="autumn-bg">
       <div className="main-content">
         <header className="header">
-          <h1>Feliz Cumpleaños Joanna!</h1>
+          <h1>¡Feliz Cumpleaños Joanna!</h1>
           <span></span>
-          <p className="subtitle">Te deseo un muy feliz cumpleaños y un día hermoso, mi osito parde 🎉🎂🎈❤️🍂</p>
+          <p className="subtitle">Te deseo un muy feliz cumpleaños y un día hermoso, mi osito pardo 🎉🎂🎈❤️🍂</p>
         </header>
         <main>
         <div className="spotify-embed-container">
@@ -76,12 +76,12 @@ function App() {
                 allowFullScreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
-                title="Spotify Playlist"
+                title="Lista de Spotify"
               ></iframe>
             </div>
           <section className={`section card-section${visibleSection >= 0 ? ' fade-in' : ' hidden'}`}>
-            <h2>Your Birthday Card</h2>
-            <p>Enter the password to unlock your card:</p>
+            <h2>Tu Tarjeta de Cumpleaños</h2>
+            <p>Ingresá la contraseña para desbloquear tu tarjeta:</p>
             
             {!cardUnlocked && (
               <>
@@ -89,7 +89,7 @@ function App() {
                   <input
                     className="card-password-input"
                     type="password"
-                    placeholder="Enter password to unlock..."
+                    placeholder="Ingresá la contraseña..."
                     value={cardPasswordInput}
                     onChange={e => setCardPasswordInput(e.target.value)}
                   />
@@ -108,75 +108,57 @@ function App() {
                       };
                       fireConfetti();
                     } else {
-                      setCardPasswordError("Incorrect password. Try again!");
+                      setCardPasswordError("Contraseña incorrecta. ¡Intentá de nuevo!");
                     }
-                  }}>Unlock</button>
+                  }}>Desbloquear</button>
                   {cardPasswordError && <div className="card-password-error">{cardPasswordError}</div>}
                 </div>
                 <div className="start-hint-es">
-                  <p>Presiona "Start" para revelar la siguiente sección (nota de voz).</p>
+                  <p>Presioná "Iniciar" para revelar la siguiente sección.</p>
                 </div>
                 <div className="start-btn-container">
-                  <button className="start-btn" onClick={handleStart}>Start</button>
+                  <button className="start-btn" onClick={handleStart}>Iniciar</button>
                 </div>
               </>
             )}
             {cardUnlocked && (
               <div className={`card-link-container${fading ? ' fade-out' : ''}`}>
-                <button className="card-link" onClick={handleConfettiAndRedirect}>Open PDF Card</button>
+                <button className="card-link" onClick={handleConfettiAndRedirect}>Abrir Tarjeta PDF</button>
               </div>
             )}
             
           </section>
-          <section className={`section start-section${visibleSection >= 1 ? ' fade-in' : ' hidden'}`}>
-            <h2>Click the button to start</h2>
-            <div className="start-btn-container">
-              <button className="start-btn" onClick={handleStart}>Reveal Next Section</button>
-            </div>
-          </section>
-          <section className={`section card-section${visibleSection >= 2 ? ' fade-in' : ' hidden'}`}>
-            {cardUnlocked && (
-              <div className={`card-link-container${fading ? ' fade-out' : ''}`}>
-                <button className="card-link" onClick={handleRevealCard}>Reveal More</button>
-              </div>
-            )}
-          </section>
-          <section className={`section voice-section${visibleSection >= 3 ? ' fade-in' : ' hidden'}`}>
-            <h2>Voice Notes</h2>
+
+          <section className={`section voice-section${visibleSection >= 2 ? ' fade-in' : ' hidden'}`}>
+            <h2>Notas de Voz</h2>
             <audio controls src="#">
-              Your browser does not support the audio element.
+              Tu navegador no soporta el elemento de audio.
             </audio>
             <div style={{textAlign: 'center', marginTop: '1.5rem'}}>
-              <button className="card-link" onClick={handleRevealVoice}>Reveal More</button>
+              <button className="card-link" onClick={handleRevealVoice}>Revelar Más</button>
             </div>
           </section>
           <section className={`section puzzle-section${visibleSection >= 4 ? ' fade-in' : ' hidden'}`}>
-            <h2>Puzzle Challenge</h2>
-            <p>Solve the puzzle to reveal your code:</p>
+            <h2>Desafío de Puzzle</h2>
+            <p>¡Resolvé el puzzle para descubrir tu código!</p>
             <div className="puzzle-embed-container">
-              {/* PuzzleMe Embed Start */}
-              <div style={{position: 'relative', textAlign: 'center'}}>
-                <div className="pm-embed-div" data-id="45ed7d13" data-set="0c862dae7883570b7d30ed2cda8fa66d90c218858acc2bbbebd6be4f51e3f30c" data-puzzletype="crossword" data-height="700px" data-mobilemargin="10px"></div>
-                <div className="pm-attribution-div" style={{fontFamily: 'sans-serif', fontSize: 12, color: '#666', position: 'absolute', top: '100%', left: '50%', transform: 'translate(-50%, 0px)', paddingTop: 5, width: '100%'}}>
-                  <a href="https://amuselabs.com/" target="_blank" style={{color: '#666', textDecoration: 'underline'}}></a> 
-                </div>
-              </div>
-              {/* PuzzleMe Embed End */}
+              <iframe
+                height="700px"
+                width="100%"
+                allow="web-share; fullscreen"
+                style={{ border: 'none', width: '100% !important', position: 'static', display: 'block !important', margin: '0 !important' }}
+                src="https://puzzleme.amuselabs.com/pmm/crossword?id=45ed7d13&set=0c862dae7883570b7d30ed2cda8fa66d90c218858acc2bbbebd6be4f51e3f30c&embed=1"
+                aria-label="Juego Puzzle Me"
+                title="Juego Puzzle Me"
+              ></iframe>
             </div>
             <div style={{textAlign: 'center', marginTop: '1.5rem'}}>
-              <button className="card-link" onClick={handleRevealPuzzle}>Reveal More</button>
+              <button className="card-link" onClick={handleRevealPuzzle}>Revelar Más</button>
             </div>
           </section>
-          <section className={`section message-section${visibleSection >= 5 ? ' fade-in' : ' hidden'}`}>
-            <h2>Personal Message</h2>
-            <p className="personal-message">[Your message will appear here]</p>
-          </section>
-          <section className={`section card-final-section${visibleSection >= 6 ? ' fade-in' : ' hidden'}`}>
-            <h2>Your Birthday Card</h2>
-            <p>Click below to view your special card:</p>
-            <div className={`card-link-container${fading ? ' fade-out' : ''}`}>
-              <button className="card-link" onClick={handleConfettiAndRedirect}>Reveal Card</button>
-            </div>
+          <section className={`section message-section${visibleSection >= 4 ? ' fade-in' : ' hidden'}`}>
+            <h2>Mensaje Personal</h2>
+            <p className="personal-message">[Tu mensaje aparecerá acá]</p>
           </section>
         </main>
       </div>
