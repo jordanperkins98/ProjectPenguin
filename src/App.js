@@ -20,6 +20,17 @@ function App() {
     jsConfettiRef.current = new JSConfetti();
   }, []);
 
+  React.useEffect(() => {
+    function setBackground() {
+      const isMobile = window.innerWidth <= 800;
+      const bg = isMobile ? '/Mobilebg.png' : '/joanna-dogs-bg.png';
+      document.querySelector('.autumn-bg').style.backgroundImage = `url('${process.env.PUBLIC_URL + bg}')`;
+    }
+    setBackground();
+    window.addEventListener('resize', setBackground);
+    return () => window.removeEventListener('resize', setBackground);
+  }, []);
+
   const handleConfettiAndRedirect = () => {
     if (jsConfettiRef.current) {
       jsConfettiRef.current.addConfetti();
