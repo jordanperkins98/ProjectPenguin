@@ -1,7 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
 body, h1, h2, h3, h4, h5, h6, .pacifico-regular {
-  font-family: "Pacifico", cursive, 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-family: "Sour Gummy", "Pacifico", cursive, 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -101,18 +107,24 @@ main {
   gap: 1rem;
 }
 
-.card-link {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1.2rem;
-  background: #e07a5f;
+.card-link, .card-password-btn, .start-btn {
+  background: linear-gradient(90deg, #ff7eb3 0%, #ff758c 100%);
   color: #fff;
-  border-radius: 0.5rem;
-  text-decoration: none;
+  border: none;
+  border-radius: 2em;
+  padding: 0.8em 2.2em;
+  font-size: 1.1rem;
   font-weight: bold;
-  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 120, 180, 0.15);
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background 0.2s, transform 0.2s;
+  text-align: center;
+  display: inline-block;
 }
-.card-link:hover {
-  background: #b85c38;
+.card-link:hover, .card-password-btn:hover, .start-btn:hover {
+  background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+  transform: scale(1.05);
 }
 
 .voice-section audio {
@@ -153,32 +165,6 @@ main {
   font-size: 0.95rem;
 }
 
-.start-btn {
-  background: linear-gradient(90deg, #ff7eb3 0%, #ff758c 100%);
-  color: #fff;
-  display: flex;
-  border: none;
-  border-radius: 2em;
-  padding: 0.8em 2.2em;
-  font-size: 1.3rem;
-  font-weight: bold;
-  box-shadow: 0 2px 8px rgba(255, 120, 180, 0.15);
-  cursor: pointer;
-  margin-top: 1.5rem;
-  transition: background 0.2s, transform 0.2s;
-}
-.start-btn:hover {
-  background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
-  transform: scale(1.05);
-}
-
-.start-btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .fade-in {
   opacity: 1;
   transition: opacity 1s;
@@ -213,23 +199,6 @@ main {
 .card-password-input:focus {
   border: 2.5px solid #ff758c;
   box-shadow: 0 2px 12px rgba(255, 120, 180, 0.18);
-}
-.card-password-btn {
-  background: linear-gradient(90deg, #ff7eb3 0%, #ff758c 100%);
-  color: #fff;
-  border: none;
-  border-radius: 2em;
-  padding: 0.7em 2em;
-  font-size: 1.1rem;
-  font-weight: bold;
-  box-shadow: 0 2px 8px rgba(255, 120, 180, 0.15);
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  margin-top: 0.2rem;
-}
-.card-password-btn:hover {
-  background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
-  transform: scale(1.05);
 }
 .card-password-error {
   color: #ff758c;

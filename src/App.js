@@ -49,14 +49,28 @@ function App() {
     if (jsConfettiRef.current) {
       jsConfettiRef.current.addConfetti();
     }
-    setVisibleSection(4);
+    setVisibleSection(3);
   };
 
   const handleRevealPuzzle = () => {
     if (jsConfettiRef.current) {
       jsConfettiRef.current.addConfetti();
     }
+    setVisibleSection(4);
+  };
+
+  const handleRevealFinal = () => {
+    if (jsConfettiRef.current) {
+      jsConfettiRef.current.addConfetti();
+    }
     setVisibleSection(5);
+  };
+
+  const handleRevealUltimate = () => {
+    if (jsConfettiRef.current) {
+      jsConfettiRef.current.addConfetti();
+    }
+    setVisibleSection(6);
   };
 
   return (
@@ -64,9 +78,10 @@ function App() {
       <div className="main-content">
         <header className="header">
           <h1>¡Feliz Cumpleaños Joanna!</h1>
+          <img src={process.env.PUBLIC_URL + '/Joanna.jpeg'} alt="Joanna" className="joanna-photo" style={{maxWidth: '220px', width: '100%', borderRadius: '1.5em', margin: '1rem auto 0.5rem auto', boxShadow: '0 4px 18px rgba(255,120,180,0.18)'}} />
           <span></span>
           <p className="subtitle">
-            Te deseo un muy feliz cumpleaños y un día hermoso, mi osito pardo 🎉🎂🎈❤️🍂
+          Feliz cumpleaños, mi osito pardo. Ojalá este día sea tan hermoso y lleno de luz como vos. Este es un pequeño rincón de la internet hecho solo para vos. 🎉🎂🎈❤️🍂
             <span style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '0.5em' }}>
               {!balloonPopped && (
                 <span
@@ -149,8 +164,8 @@ function App() {
                 <div className="start-hint-es">
                   <p>Presioná "Iniciar" para revelar la siguiente sección.</p>
                 </div>
-                <div className="start-btn-container">
-                  <button className="start-btn" onClick={handleStart}>Iniciar</button>
+                <div className="start-btn-container" style={{textAlign: 'center', marginTop: '1.5rem'}}>
+                  <button className="start-btn"  onClick={handleStart}>Iniciar</button>
                 </div>
               </>
             )}
@@ -163,7 +178,7 @@ function App() {
           </section>
 
           <section className={`section voice-section${visibleSection >= 2 ? ' fade-in' : ' hidden'}`}>
-            <h2>Notas de Voz</h2>
+            <h2>Pista 2: Notas de Voz</h2>
             <audio controls src=".\Clue1.m4a">
               Tu navegador no soporta el elemento de audio.
             </audio>
@@ -171,8 +186,8 @@ function App() {
               <button className="card-link" onClick={handleRevealVoice}>Revelar Más</button>
             </div>
           </section>
-          <section className={`section puzzle-section${visibleSection >= 4 ? ' fade-in' : ' hidden'}`}>
-            <h2>Desafío de Puzzle</h2>
+          <section className={`section puzzle-section${visibleSection >= 3 ? ' fade-in' : ' hidden'}`}>
+            <h2> Pista 3: Desafío de Puzzle</h2>
             <p>¡Resolvé el puzzle para descubrir tu código!</p>
             <div className="puzzle-embed-container">
               <iframe
@@ -190,8 +205,23 @@ function App() {
             </div>
           </section>
           <section className={`section message-section${visibleSection >= 4 ? ' fade-in' : ' hidden'}`}>
-            <h2>Mensaje Personal</h2>
-            <p className="personal-message">[Tu mensaje aparecerá acá]</p>
+            <h2>Pista 4</h2>
+            <p className="personal-message">Vas a encontrar esta pista detrás de un globo, en algún lugar de esta página. Hacé clic y reventalo.</p>
+            <div className="reveal-btn-container" style={{textAlign: 'center', marginTop: '1.5rem'}}>
+              <button className="card-link" onClick={handleRevealFinal}>Revelar Más</button>
+            </div>
+          </section>
+          <section className={`section clue5-section${visibleSection >= 5 ? ' fade-in' : ' hidden'}`}>
+            <h2>Pista 5</h2>
+            <p>Esta se esconde en un lugar donde no esperarías encontrarme. Ahí vas a descubrir la palabra.</p>
+            <div className="reveal-btn-container" style={{textAlign: 'center', marginTop: '1.5rem'}}>
+              <button className="card-link" onClick={handleRevealUltimate}>Revelar pista final</button>
+            </div>
+          </section>
+          <section className={`section ultimate-section${visibleSection >= 6 ? ' fade-in' : ' hidden'}`}>
+            <h2>Pista Final</h2>
+            <p>Feliz cumpleaños, hermosa. Significás el mundo para mí… no solo el mundo, sino también su sol. Sos tan especial, y estoy inmensamente orgulloso de todo lo que hacés.
+               <br></br>Esta última pista te va a llegar de la misma forma que la primera, así que escribime para encontrarla. 🤗😘</p>
           </section>
         </main>
       </div>
