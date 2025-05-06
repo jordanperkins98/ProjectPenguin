@@ -11,6 +11,8 @@ function App() {
   const [cardPasswordError, setCardPasswordError] = React.useState("");
   const [cardUnlocked, setCardUnlocked] = React.useState(false);
   const [showFirstClue, setShowFirstClue] = React.useState(false);
+  const [balloonPopped, setBalloonPopped] = React.useState(false);
+  const [showBalloonClue, setShowBalloonClue] = React.useState(false);
   // TODO: Set your secret password here
   const SECRET_CARD_PASSWORD = "UMA";
 
@@ -63,7 +65,37 @@ function App() {
         <header className="header">
           <h1>¡Feliz Cumpleaños Joanna!</h1>
           <span></span>
-          <p className="subtitle">Te deseo un muy feliz cumpleaños y un día hermoso, mi osito pardo 🎉🎂🎈❤️🍂</p>
+          <p className="subtitle">
+            Te deseo un muy feliz cumpleaños y un día hermoso, mi osito pardo 🎉🎂🎈❤️🍂
+            <span style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '0.5em' }}>
+              {!balloonPopped && (
+                <span
+                  className={`balloon-inline${balloonPopped ? ' popped' : ''}`}
+                  onMouseDown={e => e.preventDefault()}
+                  onClick={e => {
+                    e.preventDefault();
+                    setBalloonPopped(true);
+                    setTimeout(() => setShowBalloonClue(true), 600); // Wait for pop animation
+                  }}
+                  style={{ cursor: 'pointer' }}
+                  tabIndex={0}
+                  role="button"
+                >
+                  <span className="balloon-shape-inline">
+                    <span className="balloon-shine-inline"></span>
+                  </span>
+                  <svg className="balloon-string-svg-inline" width="10" height="22" viewBox="0 0 10 22">
+                    <path d="M5 0 Q2 7 5 11 Q8 15 5 22" stroke="#ff7eb3" strokeWidth="1.2" fill="none"/>
+                  </svg>
+                </span>
+              )}
+            </span>
+            {balloonPopped && (
+              <div className="clue-box">
+                <p>Otra pista: Esta palabra eres vos, inolvidable, raro, único e increíble. Un anagrama de la misma es Traxendiorario 💖</p>
+              </div>
+            )}
+          </p>
         </header>
         <main>
         <div className="spotify-embed-container">
@@ -113,6 +145,7 @@ function App() {
                   }}>Desbloquear</button>
                   {cardPasswordError && <div className="card-password-error">{cardPasswordError}</div>}
                 </div>
+            
                 <div className="start-hint-es">
                   <p>Presioná "Iniciar" para revelar la siguiente sección.</p>
                 </div>
