@@ -84,47 +84,99 @@ function App() {
     setVisibleSection(6);
   };
 
+  // Responsive mobile detection
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 800);
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 800);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="autumn-bg">
-      <div className="main-content">
-        <header className="header">
-          <div className="title-container">
-          <h1>¡Feliz Cumpleaños Joanna!</h1>
+      {isMobile && (
+        <div className="hero-mobile">
+          <img src={process.env.PUBLIC_URL + '/Mobilebg.png'} alt="Hero" className="hero-mobile-img" />
+          <div className="hero-mobile-h1-row">
+            <h1 className="mobile-h1">¡Feliz Cumpleaños Joanna!</h1>
           </div>
-          <img src={process.env.PUBLIC_URL + '/Joanna.jpeg'} alt="Joanna" className="joanna-photo" style={{maxWidth: '220px', width: '100%', borderRadius: '1.5em', margin: '1rem auto 0.5rem auto', boxShadow: '0 4px 18px rgba(255,120,180,0.18)'}} />
-          <span></span>
-          <p className="subtitle">
-          Feliz cumpleaños, mi osito pardo. Ojalá este día sea tan hermoso y lleno de luz como vos. Este es un pequeño rincón de la internet hecho solo para vos. 🎉🎂🎈❤️🍂
-            <span style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '0.5em' }}>
-              {!balloonPopped && (
-                <span
-                  className={`balloon-inline${balloonPopped ? ' popped' : ''}`}
-                  onMouseDown={e => e.preventDefault()}
-                  onClick={e => {
-                    e.preventDefault();
-                    setBalloonPopped(true);
-                    setTimeout(() => setShowBalloonClue(true), 600); // Wait for pop animation
-                  }}
-                  style={{ cursor: 'pointer' }}
-                  tabIndex={0}
-                  role="button"
-                >
-                  <span className="balloon-shape-inline">
-                    <span className="balloon-shine-inline"></span>
+        </div>
+      )}
+      <div className="main-content" style={isMobile ? {marginTop: '-2.5rem', paddingTop: 0} : {}}>
+        {isMobile && (
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.5rem'}}>
+            <img src={process.env.PUBLIC_URL + '/Joanna.jpeg'} alt="Joanna" className="joanna-photo" />
+            <p className="subtitle" style={{marginTop: '1.2rem'}}>
+              Feliz cumpleaños, mi osito pardo. Ojalá este día sea tan hermoso y lleno de luz como vos. Este es un pequeño rincón de la internet hecho solo para vos. 🎉🎂🎈❤️🍂
+              <span style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '0.5em' }}>
+                {!balloonPopped && (
+                  <span
+                    className={`balloon-inline${balloonPopped ? ' popped' : ''}`}
+                    onMouseDown={e => e.preventDefault()}
+                    onClick={e => {
+                      e.preventDefault();
+                      setBalloonPopped(true);
+                      setTimeout(() => setShowBalloonClue(true), 600); // Wait for pop animation
+                    }}
+                    style={{ cursor: 'pointer' }}
+                    tabIndex={0}
+                    role="button"
+                  >
+                    <span className="balloon-shape-inline">
+                      <span className="balloon-shine-inline"></span>
+                    </span>
+                    <svg className="balloon-string-svg-inline" width="10" height="22" viewBox="0 0 10 22">
+                      <path d="M5 0 Q2 7 5 11 Q8 15 5 22" stroke="#ff7eb3" strokeWidth="1.2" fill="none"/>
+                    </svg>
                   </span>
-                  <svg className="balloon-string-svg-inline" width="10" height="22" viewBox="0 0 10 22">
-                    <path d="M5 0 Q2 7 5 11 Q8 15 5 22" stroke="#ff7eb3" strokeWidth="1.2" fill="none"/>
-                  </svg>
-                </span>
+                )}
+              </span>
+              {balloonPopped && (
+                <div className="clue-box">
+                  <p>Otra pista: Esta palabra eres vos, inolvidable, raro, único e increíble. Un anagrama de la misma es Traxendiorario 💖</p>
+                </div>
               )}
-            </span>
-            {balloonPopped && (
-              <div className="clue-box">
-                <p>Otra pista: Esta palabra eres vos, inolvidable, raro, único e increíble. Un anagrama de la misma es Traxendiorario 💖</p>
-              </div>
-            )}
-          </p>
-        </header>
+            </p>
+          </div>
+        )}
+        {!isMobile && (
+          <header className="header">
+            <h1 className="desktop-h1">¡Feliz Cumpleaños Joanna!</h1>
+            <img src={process.env.PUBLIC_URL + '/Joanna.jpeg'} alt="Joanna" className="joanna-photo" />
+            <span></span>
+            <p className="subtitle">
+              Feliz cumpleaños, mi osito pardo. Ojalá este día sea tan hermoso y lleno de luz como vos. Este es un pequeño rincón de la internet hecho solo para vos. 🎉🎂🎈❤️🍂
+              <span style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '0.5em' }}>
+                {!balloonPopped && (
+                  <span
+                    className={`balloon-inline${balloonPopped ? ' popped' : ''}`}
+                    onMouseDown={e => e.preventDefault()}
+                    onClick={e => {
+                      e.preventDefault();
+                      setBalloonPopped(true);
+                      setTimeout(() => setShowBalloonClue(true), 600); // Wait for pop animation
+                    }}
+                    style={{ cursor: 'pointer' }}
+                    tabIndex={0}
+                    role="button"
+                  >
+                    <span className="balloon-shape-inline">
+                      <span className="balloon-shine-inline"></span>
+                    </span>
+                    <svg className="balloon-string-svg-inline" width="10" height="22" viewBox="0 0 10 22">
+                      <path d="M5 0 Q2 7 5 11 Q8 15 5 22" stroke="#ff7eb3" strokeWidth="1.2" fill="none"/>
+                    </svg>
+                  </span>
+                )}
+              </span>
+              {balloonPopped && (
+                <div className="clue-box">
+                  <p>Otra pista: Esta palabra eres vos, inolvidable, raro, único e increíble. Un anagrama de la misma es Traxendiorario 💖</p>
+                </div>
+              )}
+            </p>
+          </header>
+        )}
         <main>
         <div className="spotify-embed-container">
               <iframe

@@ -31,6 +31,41 @@ body {
   position: relative;
 }
 
+.hero-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  min-height: unset;
+  background: none;
+  padding-top: 0;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.hero-mobile-img {
+  width: 100vw;
+  display: block;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-mobile-h1-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 8vw;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .main-content {
   margin: 0 auto;
   max-width: 500px;
@@ -413,6 +448,18 @@ main {
   100% { opacity: 0; transform: scale(0);}
 }
 
+.desktop-h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 2.2rem;
+  color: #4e2e0e;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
 @media (max-width: 600px) {
   .main-content {
     padding: 1rem 0.5rem;
@@ -422,10 +469,85 @@ main {
 
 @media (max-width: 800px) {
   .autumn-bg {
-    background-size: contain !important;
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-attachment: fixed !important;
+    background: none !important;
+  }
+  .hero-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    min-height: unset;
+    background: none;
+    padding-top: 0;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .hero-mobile-img {
+    width: 100vw;
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    height: auto;
+  }
+  .hero-mobile-h1-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 8vw;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .mobile-h1 {
+    font-family: "Pacifico", cursive;
+  font-size: 2.2rem;
+  color: #4e2e0e;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem; /* slightly smaller */
+  background: rgba(255,255,255,0.75); /* semi-transparent white */
+  padding: 0.4em 1em;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: inline-block;
+  }
+
+  .joanna-photo{
+    max-width: 250px;
+    width: 100%;
+    border-radius: 1.5em;
+    margin: 0.5rem auto 0.5rem auto;
+    box-shadow: 0 4px 18px rgba(255,120,180,0.18);
+    border: 5px solid #e07a5f;
+    background: #fff0;
+    display: block;
+    position: relative;
+    top: -100px;
+  }
+}
+
+@media (min-width: 801px) {
+  .joanna-photo {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 1.5em;
+    margin: 0.5rem auto 0.5rem auto;
+    box-shadow: 0 4px 18px rgba(255,120,180,0.18);
+    border: 5px solid #e07a5f;
+    background: #fff0;
+    display: block;
+    
   }
 }
 
