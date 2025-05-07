@@ -425,7 +425,7 @@ main {
     background-size: contain !important;
     background-repeat: no-repeat;
     background-position: center top;
-    background-attachment: fixed !important;
+    background-attachment: scroll !important; /* mobile: scrolls with content */
   }
 }
 
