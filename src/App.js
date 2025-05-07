@@ -192,7 +192,7 @@ function App() {
 
           <section className={`section voice-section${visibleSection >= 2 ? ' fade-in' : ' hidden'}`}>
             <h2>Pista 2: Notas de Voz</h2>
-            <audio controls src=".\Clue1.m4a">
+            <audio controls src={process.env.PUBLIC_URL + '/Clue1.m4a'}>
               Tu navegador no soporta el elemento de audio.
             </audio>
             <div style={{textAlign: 'center', marginTop: '1.5rem'}}>
