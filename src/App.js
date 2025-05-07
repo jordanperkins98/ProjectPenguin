@@ -88,7 +88,9 @@ function App() {
     <div className="autumn-bg">
       <div className="main-content">
         <header className="header">
+          <div className="title-container">
           <h1>¡Feliz Cumpleaños Joanna!</h1>
+          </div>
           <img src={process.env.PUBLIC_URL + '/Joanna.jpeg'} alt="Joanna" className="joanna-photo" style={{maxWidth: '220px', width: '100%', borderRadius: '1.5em', margin: '1rem auto 0.5rem auto', boxShadow: '0 4px 18px rgba(255,120,180,0.18)'}} />
           <span></span>
           <p className="subtitle">

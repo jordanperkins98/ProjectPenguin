@@ -16,6 +16,10 @@ body {
   min-height: 100vh;
 }
 
+.title-container{
+  margin-bottom: 25rem;
+}
+
 .autumn-bg {
   min-height: 100vh;
   display: flex;
@@ -395,6 +399,15 @@ main {
   .main-content {
     padding: 1rem 0.5rem;
     max-width: 98vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .autumn-bg {
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed !important;
   }
 }
 
