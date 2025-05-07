@@ -14,7 +14,7 @@ function App() {
   const [balloonPopped, setBalloonPopped] = React.useState(false);
   const [showBalloonClue, setShowBalloonClue] = React.useState(false);
   // TODO: Set your secret password here
-  const SECRET_CARD_PASSWORD = "UMA";
+  const SECRET_CARD_PASSWORD = "hojasninaumaextraordinarioocéanomoralejo";
 
   React.useEffect(() => {
     jsConfettiRef.current = new JSConfetti();
