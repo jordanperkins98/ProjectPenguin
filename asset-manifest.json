@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.23ad8060.css",
+    "main.css": "/static/css/main.c1249f6e.css",
     "main.js": "/static/js/main.de8804e8.js",
     "static/media/joanna-dogs-bg.png": "/static/media/joanna-dogs-bg.3625e6990770581edf13.png",
     "index.html": "/index.html",
-    "main.23ad8060.css.map": "/static/css/main.23ad8060.css.map",
+    "main.c1249f6e.css.map": "/static/css/main.c1249f6e.css.map",
     "main.de8804e8.js.map": "/static/js/main.de8804e8.js.map"
   },
   "entrypoints": [
-    "static/css/main.23ad8060.css",
+    "static/css/main.c1249f6e.css",
     "static/js/main.de8804e8.js"
   ]
 }
