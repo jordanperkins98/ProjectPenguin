@@ -38,7 +38,7 @@ function App() {
     setFading(true);
     setTimeout(() => {
       window.location.href =
-        'https://www.canva.com/design/DAGlMLpTYJA/NBmfaCtxQjwVvs7QMKbUbw/edit?utm_content=DAGlMLpTYJA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton';
+      process.env.PUBLIC_URL + '/Joanna Cumpleaños.pdf';
     }, 1200); // 1.2s fade duration
   };
 
