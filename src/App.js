@@ -13,7 +13,7 @@ function App() {
   const [showFirstClue, setShowFirstClue] = React.useState(false);
   const [balloonPopped, setBalloonPopped] = React.useState(false);
   const [showBalloonClue, setShowBalloonClue] = React.useState(false);
-  // TODO: Set your secret password here
+
   const SECRET_CARD_PASSWORD = "hojasninaumainefableocéanokoala";
 
   React.useEffect(() => {
@@ -29,6 +29,18 @@ function App() {
     setBackground();
     window.addEventListener('resize', setBackground);
     return () => window.removeEventListener('resize', setBackground);
+  }, []);
+
+  React.useEffect(() => {
+    // Always scroll to top on initial load and prevent browser scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    // Extra: handle late browser scroll restoration
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   }, []);
 
   const handleConfettiAndRedirect = () => {
@@ -127,7 +139,7 @@ function App() {
 
   return (
     <div className="autumn-bg">
-      {showCountdown && (
+      {!showCountdown && (
         <div className="countdown-overlay">
           <div className="countdown-box">
             <h2>¡Feliz Cumpleaños, Joanna!</h2>
@@ -295,8 +307,8 @@ function App() {
             </div>
           </section>
           <section className={`section puzzle-section${visibleSection >= 3 ? ' fade-in' : ' hidden'}`}>
-            <h2> Pista 3: Desafío de Puzzle</h2>
-            <p>¡Resolvé el puzzle para descubrir tu código!</p>
+            <h2> Pista 3: Puzzle Todo Sobre Ti</h2>
+            <p>¡Resolvé el puzzle para descubrir tu palabra!</p>
             <div className="puzzle-embed-container">
               <iframe
                 height="700px"
