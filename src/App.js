@@ -314,7 +314,7 @@ function App() {
           </section>
           <section className={`section message-section${visibleSection >= 4 ? ' fade-in' : ' hidden'}`}>
             <h2>Pista 4</h2>
-            <p className="personal-message">Vas a encontrar esta pista detrás de un globo, en algún lugar de esta página. Hacé clic y reventalo.</p>
+            <p className="personal-message">Vas a encontrar esta pista escondida detrás de un objeto inflado que flota en algún lugar de esta página. Hacé clic para hacerlo explotar.</p>
             <div className="reveal-btn-container" style={{textAlign: 'center', marginTop: '1.5rem'}}>
               <button className="card-link" onClick={handleRevealFinal}>Revelar Más</button>
             </div>
