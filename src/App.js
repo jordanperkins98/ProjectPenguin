@@ -127,7 +127,7 @@ function App() {
 
   return (
     <div className="autumn-bg">
-      {!showCountdown && (
+      {showCountdown && (
         <div className="countdown-overlay">
           <div className="countdown-box">
             <h2>¡Feliz Cumpleaños, Joanna!</h2>
