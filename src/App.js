@@ -285,8 +285,8 @@ function App() {
           </section>
           <section className={`section ultimate-section${visibleSection >= 6 ? ' fade-in' : ' hidden'}`}>
             <h2>Pista Final</h2>
-            <p>Feliz cumpleaños, hermosa. Significás el mundo para mí… no solo el mundo, sino también su sol. Sos tan especial, y estoy inmensamente orgulloso de todo lo que hacés.
-               <br></br>Esta última pista te va a llegar de la misma forma que la primera, así que escribime para encontrarla. 🤗😘</p>
+            <p>¡Feliz cumpleaños, preciosa! Significás todo para mí… el mundo, su sol y cada una de sus estrellas. Gracias por ser tan especial. me hacés feliz a cada paso y estoy inmensamente orgulloso de todo lo que hacés
+               <br></br>Esta última pista te va a llegar de la misma forma que la primera, así que escribime para encontrarla. 🤗😘😘</p>
           </section>
         </main>
       </div>
