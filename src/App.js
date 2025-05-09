@@ -14,7 +14,7 @@ function App() {
   const [balloonPopped, setBalloonPopped] = React.useState(false);
   const [showBalloonClue, setShowBalloonClue] = React.useState(false);
   // TODO: Set your secret password here
-  const SECRET_CARD_PASSWORD = "hojasninaumaextraordinarioocéanokoala";
+  const SECRET_CARD_PASSWORD = "hojasninaumainefableocéanokoala";
 
   React.useEffect(() => {
     jsConfettiRef.current = new JSConfetti();
@@ -133,7 +133,7 @@ function App() {
               </span>
               {balloonPopped && (
                 <div className="clue-box">
-                  <p>Otra pista: Esta palabra eres vos, inolvidable, raro, único e increíble. Un anagrama de la misma es Traxendiorario 💖</p>
+                  <p>Otra pista: Esta palabra eres vos, inolvidable, raro, único e increíble. Un anagrama de la misma es "benafiel" 💖</p>
                 </div>
               )}
             </p>
@@ -171,7 +171,7 @@ function App() {
               </span>
               {balloonPopped && (
                 <div className="clue-box">
-                  <p>Otra pista: Esta palabra eres vos, inolvidable, raro, único e increíble. Un anagrama de la misma es Traxendiorario 💖</p>
+                  <p>Otra pista: Esta palabra eres vos, inolvidable, raro, único e especial. Un anagrama de la misma es "benafiel" 💖</p>
                 </div>
               )}
             </p>
