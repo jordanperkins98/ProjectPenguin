@@ -127,7 +127,7 @@ function App() {
 
   return (
     <div className="autumn-bg">
-      {showCountdown && (
+      {!showCountdown && (
         <div className="countdown-overlay">
           <div className="countdown-box">
             <h2>¡Feliz Cumpleaños, Joanna!</h2>
@@ -248,7 +248,7 @@ function App() {
                     value={cardPasswordInput}
                     onChange={e => setCardPasswordInput(e.target.value)}
                   />
-                  <button className="card-password-btn" onClick={() => {
+                  <button className="card-password-btn pulse-btn" onClick={() => {
                     if (cardPasswordInput === SECRET_CARD_PASSWORD) {
                       setCardPasswordError("");
                       let confettiCount = 0;
