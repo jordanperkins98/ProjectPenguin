@@ -41,6 +41,12 @@ function App() {
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100);
+    // Try a longer timeout in case of late layout shifts (e.g., iframe/image load)
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1000);
+    // Debug: log scroll events to see what causes scrolling
+
   }, []);
 
   const handleConfettiAndRedirect = () => {
