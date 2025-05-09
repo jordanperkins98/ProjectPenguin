@@ -316,15 +316,17 @@ function App() {
             <h2> Pista 3: Puzzle Todo Sobre Ti</h2>
             <p>¡Resolvé el puzzle para descubrir tu palabra!</p>
             <div className="puzzle-embed-container">
-              <iframe
-                height="700px"
-                width="100%"
-                allow="web-share; fullscreen"
-                style={{ border: 'none', width: '100% !important', position: 'static', display: 'block !important', margin: '0 !important' }}
-                src="https://puzzleme.amuselabs.com/pmm/crossword?id=45ed7d13&set=0c862dae7883570b7d30ed2cda8fa66d90c218858acc2bbbebd6be4f51e3f30c&embed=1"
-                aria-label="Juego Puzzle Me"
-                title="Juego Puzzle Me"
-              ></iframe>
+              {visibleSection >= 3 && (
+                <iframe
+                  height="700px"
+                  width="100%"
+                  allow="web-share; fullscreen"
+                  style={{ border: 'none', width: '100% !important', position: 'static', display: 'block !important', margin: '0 !important' }}
+                  src="https://puzzleme.amuselabs.com/pmm/crossword?id=45ed7d13&set=0c862dae7883570b7d30ed2cda8fa66d90c218858acc2bbbebd6be4f51e3f30c&embed=1"
+                  aria-label="Juego Puzzle Me"
+                  title="Juego Puzzle Me"
+                ></iframe>
+              )}
             </div>
             <div style={{textAlign: 'center', marginTop: '1.5rem'}}>
               <button className="card-link" onClick={handleRevealPuzzle}>Revelar Más</button>
