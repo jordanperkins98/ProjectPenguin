@@ -171,7 +171,7 @@ function App() {
               </span>
               {balloonPopped && (
                 <div className="clue-box">
-                  <p>Otra pista: Esta palabra eres vos, inolvidable, raro, único e especial. Un anagrama de la misma es "benafiel" 💖</p>
+                  <p>Otra pista: Esta palabra eres vos, inolvidable, raro, único e increíble. Un anagrama de la misma es "benafiel" 💖</p>
                 </div>
               )}
             </p>
@@ -278,7 +278,7 @@ function App() {
           </section>
           <section className={`section clue5-section${visibleSection >= 5 ? ' fade-in' : ' hidden'}`}>
             <h2>Pista 5</h2>
-            <p>Esta se esconde en un lugar donde no esperarías encontrarme. Ahí vas a descubrir la palabra.</p>
+            <p>Esta se esconde en un lugar donde no esperarías encontrarlo. Ahí vas a descubrir la palabra.</p>
             <div className="reveal-btn-container" style={{textAlign: 'center', marginTop: '1.5rem'}}>
               <button className="card-link" onClick={handleRevealUltimate}>Revelar pista final</button>
             </div>
