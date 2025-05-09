@@ -18,6 +18,10 @@ body {
 
 .title-container{
   margin-bottom: 25rem;
+  min-height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .autumn-bg {
@@ -600,6 +604,10 @@ main {
 }
 
 @media (min-width: 801px) {
+  .title-container {
+    min-height: 12rem;
+    margin-bottom: 30rem;
+  }
   .joanna-photo {
     max-width: 250px;
     width: 100%;
