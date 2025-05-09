@@ -92,8 +92,51 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Overlay countdown state
+  const [showCountdown, setShowCountdown] = React.useState(false);
+  const [countdown, setCountdown] = React.useState(0);
+
+  React.useEffect(() => {
+    // Target: 10/05/2025 00:00:00 local time
+    const target = new Date(2025, 4, 10, 0, 0, 0); // Month is 0-indexed
+    const now = new Date();
+    if (now < target) {
+      setShowCountdown(true);
+      setCountdown(Math.floor((target - now) / 1000));
+      const interval = setInterval(() => {
+        const now2 = new Date();
+        const diff = Math.floor((target - now2) / 1000);
+        setCountdown(diff);
+        if (diff <= 0) {
+          setShowCountdown(false);
+          clearInterval(interval);
+        }
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, []);
+
+  // Countdown formatting helper
+  function formatCountdown(seconds) {
+    if (seconds <= 0) return "00:00:00";
+    const h = Math.floor(seconds / 3600).toString().padStart(2, '0');
+    const m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+    const s = (seconds % 60).toString().padStart(2, '0');
+    return `${h}:${m}:${s}`;
+  }
+
   return (
     <div className="autumn-bg">
+      {showCountdown && (
+        <div className="countdown-overlay">
+          <div className="countdown-box">
+            <h2>¡Feliz Cumpleaños, Joanna!</h2>
+            <p>¡Llegaste un poquito temprano!</p>
+            <div className="countdown-timer">{formatCountdown(countdown)}</div>
+            <div className="countdown-label">Tiempo restante</div>
+          </div>
+        </div>
+      )}
       {isMobile && (
         <div className="hero-mobile">
           <img src={process.env.PUBLIC_URL + '/Mobilebg.png'} alt="Hero" className="hero-mobile-img" />
