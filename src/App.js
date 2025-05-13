@@ -348,7 +348,7 @@ function App() {
         </main>
       </div>
       <footer className="footer">
-        <p>Hecho con amor infinito, Jordan xxx</p>
+        <p>Hecho con amor infinito, Jordan xxx Te Quiero Mucho Joanna</p>
       </footer>
     </div>
   );
